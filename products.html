@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anu Algo — Voice Agent Starter Kit & Developer Products</title>
+    <title>Anu Algo — Developer Products & Kits</title>
     <style>
         :root {
             --bg: #030712;
@@ -42,53 +42,60 @@
         nav div a:hover, nav div a.active { color: var(--accent); }
         
         .container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 5rem auto;
             padding: 0 2rem;
+        }
+        .header-text {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .header-text h1 { font-size: 3rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; }
+        .header-text p { color: var(--text-muted); font-size: 1.15rem; }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
         .card {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 14px;
-            padding: 3.5rem;
-            text-align: center;
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: border-color 0.2s, transform 0.2s;
             position: relative;
             overflow: hidden;
         }
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; height: 3px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-        }
-        h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 0.5rem; color: #fff; letter-spacing: -0.03em; }
+        .card:hover { border-color: var(--accent); transform: translateY(-3px); }
+        .card h3 { font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 0; margin-bottom: 0.5rem; }
         .price {
-            font-size: 4rem;
+            font-size: 2.5rem;
             font-weight: 800;
             color: var(--accent);
-            margin: 1.5rem 0;
-            letter-spacing: -0.02em;
+            margin: 1rem 0;
         }
         p.desc {
             color: var(--text-muted);
-            font-size: 1.2rem;
-            max-width: 650px;
-            margin: 0 auto 2.5rem auto;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
         }
         ul {
             text-align: left;
             list-style-type: none;
             padding: 0;
-            margin: 2.5rem auto;
-            max-width: 550px;
+            margin: 0 0 2rem 0;
+            flex-grow: 1;
         }
         ul li {
-            margin-bottom: 1.25rem;
-            padding-left: 2rem;
+            margin-bottom: 0.85rem;
+            padding-left: 1.75rem;
             position: relative;
             color: var(--text);
-            font-size: 1.05rem;
+            font-size: 0.95rem;
         }
         ul li::before {
             content: "✓";
@@ -98,19 +105,19 @@
             font-weight: bold;
         }
         .btn {
-            display: inline-block;
+            display: block;
+            text-align: center;
             background-color: var(--accent);
             color: #030712;
-            padding: 1rem 3rem;
-            font-size: 1.15rem;
+            padding: 0.85rem 2rem;
+            font-size: 1rem;
             font-weight: 700;
             text-decoration: none;
             border-radius: 10px;
             transition: all 0.2s;
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
-            margin-top: 1rem;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
         }
-        .btn:hover { transform: translateY(-2px); opacity: 0.95; }
+        .btn:hover { opacity: 0.95; transform: translateY(-1px); }
         
         footer {
             text-align: center;
@@ -135,19 +142,41 @@
     </nav>
 
     <div class="container">
-        <div class="card">
-            <h1>Voice Agent Starter Kit</h1>
-            <div class="price">£19</div>
-            <p class="desc">The complete production-ready template for ultra-low latency real-time voice streaming architectures.</p>
-            
-            <ul>
-                <li><strong>Optimized STT-LLM-TTS Pipeline</strong> pre-configured for sub-500ms response targets.</li>
-                <li><strong>Deepgram, ElevenLabs & Pipecat</strong> integration scaffolding out-of-the-box.</li>
-                <li><strong>Built-in AI Disclosure</strong> patterns and safety prompt guardrails.</li>
-                <li><strong>One-command VPS deployment</strong> scripts with automated Caddy SSL and systemd service management.</li>
-            </ul>
+        <div class="header-text">
+            <h1>Developer Kits & Architecture</h1>
+            <p>Battle-tested deployment scripts and streaming frameworks engineered by Anu.</p>
+        </div>
 
-            <a href="https://your-payment-link-here.com" class="btn">Get the Kit (£19)</a>
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="card">
+                <div>
+                    <h3>Voice Agent Starter Kit</h3>
+                    <div class="price">£19</div>
+                    <p class="desc">The complete production-ready template for ultra-low latency real-time voice streaming architectures.</p>
+                    <ul>
+                        <li>Optimized STT-LLM-TTS pipeline for sub-500ms response targets.</li>
+                        <li>Deepgram, ElevenLabs & Pipecat scaffolding out-of-the-box.</li>
+                        <li>Built-in AI disclosure and safety guardrails.</li>
+                    </ul>
+                </div>
+                <a href="https://your-payment-link-here.com" class="btn">Get Voice Kit (£19)</a>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="card">
+                <div>
+                    <h3>Replit-to-VPS Migration Kit</h3>
+                    <div class="price">£19</div>
+                    <p class="desc">Everything you need to permanently move your application off Replit onto your own high-performance server.</p>
+                    <ul>
+                        <li>Ready-to-use deploy.sh and healthcheck scripts.</li>
+                        <li>Automated Caddy SSL certificate configuration.</li>
+                        <li>Systemd service setup for automatic crash recovery.</li>
+                    </ul>
+                </div>
+                <a href="https://your-payment-link-here.com" class="btn">Get Migration Kit (£19)</a>
+            </div>
         </div>
     </div>
 
