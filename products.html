@@ -8,10 +8,11 @@
         :root {
             --bg: #030712;
             --surface: #0f172a;
-            --border: #334155;
+            --border: #1e293b;
             --accent: #38bdf8;
             --text: #f8fafc;
             --text-muted: #94a3b8;
+            --matrix-green: rgba(34, 197, 94, 0.35); /* Crisp matrix green */
         }
         * { box-sizing: border-box; }
         body {
@@ -21,7 +22,36 @@
             margin: 0;
             padding: 0;
             line-height: 1.7;
+            position: relative;
+            overflow-x: hidden;
         }
+
+        /* Ambient dark backdrop with subtle matrix tint */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            background: 
+                radial-gradient(circle at 50% 20%, rgba(34, 197, 94, 0.05) 0%, transparent 50%),
+                linear-gradient(180deg, var(--bg) 0%, rgba(3, 7, 18, 0.95) 100%);
+        }
+
+        /* Matrix Canvas Background */
+        #matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
         nav {
             background: rgba(3, 7, 18, 0.85);
             backdrop-filter: blur(12px);
@@ -43,6 +73,8 @@
             max-width: 1100px;
             margin: 5rem auto;
             padding: 0 2rem;
+            position: relative;
+            z-index: 1;
         }
         h1 {
             font-size: 3rem;
@@ -60,16 +92,22 @@
             gap: 2rem;
         }
         .card {
-            background: var(--surface);
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(8px);
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 2.5rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: border-color 0.2s;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            position: relative;
+            overflow: hidden;
         }
-        .card:hover { border-color: var(--accent); }
+        .card:hover { 
+            border-color: var(--accent);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.12);
+        }
         .card h3 { font-size: 1.5rem; color: #fff; margin-top: 0; margin-bottom: 0.75rem; }
         .price { font-size: 2rem; font-weight: 800; color: var(--accent); margin-bottom: 1.25rem; }
         .card p { color: var(--text-muted); font-size: 1rem; margin-bottom: 2rem; }
@@ -93,11 +131,16 @@
             border-top: 1px solid var(--border);
             margin-top: 8rem;
             font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
         }
         footer a { color: var(--accent); text-decoration: none; }
     </style>
 </head>
 <body>
+    <!-- Matrix Rain Canvas -->
+    <canvas id="matrix-canvas"></canvas>
+
     <nav>
         <div class="logo">Anu<span>Algo</span></div>
         <div>
@@ -124,7 +167,7 @@
 
             <div class="card">
                 <div>
-                    <h3>Replit-to-VPS Migration Kit</h3>
+                    <h3>Replit-to-VPS Kit</h3>
                     <div class="price">£19</div>
                     <p>Ready-to-use deploy scripts, automated Caddy SSL configuration, and systemd service setups for automatic crash recovery.</p>
                 </div>
@@ -135,7 +178,7 @@
                 <div>
                     <h3>Edge ML & Prediction Kit</h3>
                     <div class="price">£60</div>
-                    <p>A self-contained local machine learning pipeline optimized for edge hardware. Includes local training loops, simulation scripts, and key-free templates.</p>
+                    <p>A self-contained local machine learning pipeline optimized for edge hardware. Includes training loops, simulation scripts, and key-free templates.</p>
                 </div>
                 <a href="#" class="btn">Get Started</a>
             </div>
@@ -144,7 +187,7 @@
                 <div>
                     <h3>Network Intelligence Kit</h3>
                     <div class="price">£99</div>
-                    <p>Automated infrastructure mapping and local network intelligence utilities. Includes subnet discovery, active node scanning, and topology mapping scripts.</p>
+                    <p>Automated infrastructure mapping and local network intelligence utilities. Subnet discovery, active node scanning, and topology mapping.</p>
                 </div>
                 <a href="#" class="btn">Get Started</a>
             </div>
@@ -154,5 +197,45 @@
     <footer>
         <p>© 2026 Anu Algo · <a href="mailto:anu@anualgo.com">anu@anualgo.com</a></p>
     </footer>
+
+    <script>
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const chars = "01ANUALGOPI5XYZ$#<>_";
+        const fontSize = 14;
+        let columns = Math.floor(canvas.width / fontSize);
+        let drops = [];
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(3, 7, 18, 0.12)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#22c55e'; // Faint green matrix text color
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars.charAt(Math.floor(Math.random() * chars.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(drawMatrix, 40);
+    </script>
 </body>
 </html>
