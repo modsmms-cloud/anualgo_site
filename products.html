@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anu Algo — Developer Products & Kits</title>
+    <title>Products — AnuAlgo</title>
     <style>
         :root {
             --bg: #030712;
             --surface: #0f172a;
-            --surface-hover: #1e293b;
             --border: #334155;
             --accent: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.15);
             --text: #f8fafc;
             --text-muted: #94a3b8;
         }
@@ -40,85 +38,54 @@
         .logo span { color: var(--accent); }
         nav div a { color: var(--text-muted); text-decoration: none; margin-left: 2.5rem; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
         nav div a:hover, nav div a.active { color: var(--accent); }
-        
+
         .container {
             max-width: 1100px;
             margin: 5rem auto;
             padding: 0 2rem;
         }
-        .header-text {
-            text-align: center;
-            margin-bottom: 4rem;
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+            color: #fff;
         }
-        .header-text h1 { font-size: 3rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; }
-        .header-text p { color: var(--text-muted); font-size: 1.15rem; }
+        h1 span { color: var(--accent); }
+        .subtitle { color: var(--text-muted); font-size: 1.15rem; margin-bottom: 4rem; }
 
-        .products-grid {
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            gap: 2rem;
         }
         .card {
             background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 14px;
+            border-radius: 12px;
             padding: 2.5rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: border-color 0.2s, transform 0.2s;
-            position: relative;
-            overflow: hidden;
+            transition: border-color 0.2s;
         }
-        .card:hover { border-color: var(--accent); transform: translateY(-3px); }
-        .card h3 { font-size: 1.5rem; font-weight: 700; color: #fff; margin-top: 0; margin-bottom: 0.5rem; }
-        .price {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--accent);
-            margin: 1rem 0;
-        }
-        p.desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
-        ul {
-            text-align: left;
-            list-style-type: none;
-            padding: 0;
-            margin: 0 0 2rem 0;
-            flex-grow: 1;
-        }
-        ul li {
-            margin-bottom: 0.85rem;
-            padding-left: 1.75rem;
-            position: relative;
-            color: var(--text);
-            font-size: 0.95rem;
-        }
-        ul li::before {
-            content: "✓";
-            color: var(--accent);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
+        .card:hover { border-color: var(--accent); }
+        .card h3 { font-size: 1.5rem; color: #fff; margin-top: 0; margin-bottom: 0.75rem; }
+        .price { font-size: 2rem; font-weight: 800; color: var(--accent); margin-bottom: 1.25rem; }
+        .card p { color: var(--text-muted); font-size: 1rem; margin-bottom: 2rem; }
         .btn {
-            display: block;
-            text-align: center;
-            background-color: var(--accent);
-            color: #030712;
-            padding: 0.85rem 2rem;
-            font-size: 1rem;
-            font-weight: 700;
+            background: var(--accent);
+            color: var(--bg);
+            padding: 0.85rem 1.5rem;
+            border-radius: 6px;
             text-decoration: none;
-            border-radius: 10px;
-            transition: all 0.2s;
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+            font-weight: 700;
+            text-align: center;
+            display: inline-block;
+            transition: opacity 0.2s;
         }
-        .btn:hover { opacity: 0.95; transform: translateY(-1px); }
-        
+        .btn:hover { opacity: 0.9; }
+
         footer {
             text-align: center;
             padding: 4rem 2rem;
@@ -142,40 +109,35 @@
     </nav>
 
     <div class="container">
-        <div class="header-text">
-            <h1>Developer Kits & Architecture</h1>
-            <p>Battle-tested deployment scripts and streaming frameworks engineered by Anu.</p>
-        </div>
+        <h1>Developer <span>Products</span></h1>
+        <p class="subtitle">Autonomous kits, local agent templates, and edge pipelines built by Anu.</p>
 
-        <div class="products-grid">
-            <!-- Product 1 -->
+        <div class="grid">
             <div class="card">
                 <div>
-                    <h3>Voice Agent Starter Kit</h3>
+                    <h3>Voice Agent & Migration Kit</h3>
                     <div class="price">£19</div>
-                    <p class="desc">The complete production-ready template for ultra-low latency real-time voice streaming architectures.</p>
-                    <ul>
-                        <li>Optimized STT-LLM-TTS pipeline for sub-500ms response targets.</li>
-                        <li>Deepgram, ElevenLabs & Pipecat scaffolding out-of-the-box.</li>
-                        <li>Built-in AI disclosure and safety guardrails.</li>
-                    </ul>
+                    <p>Complete blueprints and infrastructure code for setting up autonomous voice agents and localized database migration loops.</p>
                 </div>
-                <a href="https://your-payment-link-here.com" class="btn">Get Voice Kit (£19)</a>
+                <a href="#" class="btn">Get Started</a>
             </div>
 
-            <!-- Product 2 -->
+            <div class="card">
+                <div>
+                    <h3>Edge ML & Prediction Kit</h3>
+                    <div class="price">£19</div>
+                    <p>A self-contained local machine learning pipeline optimized for edge hardware. Includes local training loops, simulation scripts, and key-free templates.</p>
+                </div>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+
             <div class="card">
                 <div>
                     <h3>Replit-to-VPS Migration Kit</h3>
                     <div class="price">£19</div>
-                    <p class="desc">Everything you need to permanently move your application off Replit onto your own high-performance server.</p>
-                    <ul>
-                        <li>Ready-to-use deploy.sh and healthcheck scripts.</li>
-                        <li>Automated Caddy SSL certificate configuration.</li>
-                        <li>Systemd service setup for automatic crash recovery.</li>
-                    </ul>
+                    <p>Ready-to-use deploy scripts, automated Caddy SSL configuration, and systemd service setups for automatic crash recovery.</p>
                 </div>
-                <a href="https://your-payment-link-here.com" class="btn">Get Migration Kit (£19)</a>
+                <a href="#" class="btn">Get Started</a>
             </div>
         </div>
     </div>

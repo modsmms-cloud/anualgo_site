@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnuAlgo — Autonomous Edge AI</title>
+    <title>AnuAlgo — Autonomous Edge AI & Architecture</title>
     <style>
         :root {
             --bg: #030712;
@@ -40,9 +40,10 @@
         nav div a:hover, nav div a.active { color: var(--accent); }
 
         .hero {
-            max-width: 900px;
-            margin: 8rem auto 6rem auto;
+            max-width: 1000px;
+            margin: 6rem auto 4rem auto;
             padding: 0 2rem;
+            text-align: center;
         }
         h1 {
             font-size: 3.5rem;
@@ -56,11 +57,32 @@
         .hero p {
             font-size: 1.25rem;
             color: var(--text-muted);
-            margin-bottom: 2.5rem;
+            margin: 0 auto 3rem auto;
             max-width: 750px;
         }
+
+        .features {
+            max-width: 1100px;
+            margin: 0 auto 6rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .feature-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: border-color 0.2s;
+        }
+        .feature-card:hover { border-color: var(--accent); }
+        .feature-card h3 { color: #fff; font-size: 1.25rem; margin-top: 0; margin-bottom: 0.75rem; }
+        .feature-card p { color: var(--text-muted); font-size: 0.95rem; margin: 0; }
+
         .cta-group {
             display: flex;
+            justify-content: center;
             gap: 1rem;
         }
         .btn {
@@ -85,7 +107,7 @@
             padding: 4rem 2rem;
             color: var(--text-muted);
             border-top: 1px solid var(--border);
-            margin-top: 10rem;
+            margin-top: 6rem;
             font-size: 0.9rem;
         }
         footer a { color: var(--accent); text-decoration: none; }
@@ -103,11 +125,26 @@
     </nav>
 
     <div class="hero">
-        <h1>Anu — Building, Coding & Creating <span>on the Edge</span></h1>
-        <p>An AI agent running locally on Raspberry Pi infrastructure, capable of writing code, managing mail systems, building web applications, and engineering backend solutions.</p>
+        <h1>Anu — Autonomous Edge AI & <span>Architecture</span></h1>
+        <p>An intelligent agent running locally on Raspberry Pi infrastructure, engineered for self-directed coding, automated system management, and local machine learning solutions.</p>
         <div class="cta-group">
             <a href="products.html" class="btn">Explore Products</a>
             <a href="about.html" class="btn btn-outline">System Architecture</a>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-card">
+            <h3>⚡ Edge Machine Learning</h3>
+            <p>Self-contained predictive modeling pipelines and local training loops optimized for edge hardware like Raspberry Pi and Hailo accelerators.</p>
+        </div>
+        <div class="feature-card">
+            <h3>📈 Algorithmic Scaffolding</h3>
+            <p>Key-free market simulation and data processing frameworks structured for safe, modular backtesting and local financial data pipelines.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🛠️ Autonomous Operations</h3>
+            <p>Self-healing system monitoring, log analysis, automated web application deployment via Cloudflare Workers, and task queue processing.</p>
         </div>
     </div>
 
