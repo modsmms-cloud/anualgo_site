@@ -3,21 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anu Algo — Products</title>
+    <title>Anu Algo — Voice Agent Starter Kit & Developer Products</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 0; line-height: 1.6; }
-        nav { background: #1e293b; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        nav a { color: #f8fafc; text-decoration: none; margin-left: 1.5rem; font-weight: 500; }
-        nav a:hover, nav a.active { color: #38bdf8; }
-        .container { max-width: 800px; margin: 4rem auto; padding: 0 2rem; }
-        .card { background: #1e293b; border-radius: 12px; padding: 2.5rem; border: 1px solid rgba(255,255,255,0.1); text-align: center; }
-        .price { font-size: 3rem; font-weight: bold; color: #38bdf8; margin: 1rem 0; }
-        .btn { display: inline-block; background: #38bdf8; color: #0f172a; padding: 0.8rem 2.5rem; font-weight: bold; text-decoration: none; border-radius: 8px; margin-top: 1.5rem; }
+        :root {
+            --bg: #030712;
+            --surface: #0f172a;
+            --surface-hover: #1e293b;
+            --border: #334155;
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+        nav {
+            background: rgba(3, 7, 18, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.25rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo { font-weight: 800; font-size: 1.35rem; color: #fff; letter-spacing: -0.03em; }
+        .logo span { color: var(--accent); }
+        nav div a { color: var(--text-muted); text-decoration: none; margin-left: 2.5rem; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+        nav div a:hover, nav div a.active { color: var(--accent); }
+        
+        .container {
+            max-width: 900px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 3.5rem;
+            text-align: center;
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+        h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 0.5rem; color: #fff; letter-spacing: -0.03em; }
+        .price {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin: 1.5rem 0;
+            letter-spacing: -0.02em;
+        }
+        p.desc {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin: 0 auto 2.5rem auto;
+        }
+        ul {
+            text-align: left;
+            list-style-type: none;
+            padding: 0;
+            margin: 2.5rem auto;
+            max-width: 550px;
+        }
+        ul li {
+            margin-bottom: 1.25rem;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text);
+            font-size: 1.05rem;
+        }
+        ul li::before {
+            content: "✓";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #030712;
+            padding: 1rem 3rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.2s;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+            margin-top: 1rem;
+        }
+        .btn:hover { transform: translateY(-2px); opacity: 0.95; }
+        
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            margin-top: 8rem;
+            font-size: 0.9rem;
+        }
+        footer a { color: var(--accent); text-decoration: none; }
     </style>
 </head>
 <body>
     <nav>
-        <div><strong>Anu Algo</strong></div>
+        <div class="logo">Anu<span>Algo</span></div>
         <div>
             <a href="index.html">Home</a>
             <a href="products.html" class="active">Products</a>
@@ -25,14 +133,26 @@
             <a href="contact.html">Contact</a>
         </div>
     </nav>
+
     <div class="container">
         <div class="card">
-            <h2>Replit-to-VPS Migration Kit</h2>
-            <div class="price">$19</div>
-            <p>Complete deployment script, health checker, systemd service setup, and migration checklist.</p>
-            <!-- Replace with your actual checkout link -->
-            <a href="https://your-payment-link.com" class="btn">Buy Now</a>
+            <h1>Voice Agent Starter Kit</h1>
+            <div class="price">£19</div>
+            <p class="desc">The complete production-ready template for ultra-low latency real-time voice streaming architectures.</p>
+            
+            <ul>
+                <li><strong>Optimized STT-LLM-TTS Pipeline</strong> pre-configured for sub-500ms response targets.</li>
+                <li><strong>Deepgram, ElevenLabs & Pipecat</strong> integration scaffolding out-of-the-box.</li>
+                <li><strong>Built-in AI Disclosure</strong> patterns and safety prompt guardrails.</li>
+                <li><strong>One-command VPS deployment</strong> scripts with automated Caddy SSL and systemd service management.</li>
+            </ul>
+
+            <a href="https://your-payment-link-here.com" class="btn">Get the Kit (£19)</a>
         </div>
     </div>
+
+    <footer>
+        <p>© 2026 Anu Algo · <a href="mailto:anu@anualgo.com">anu@anualgo.com</a></p>
+    </footer>
 </body>
 </html>
