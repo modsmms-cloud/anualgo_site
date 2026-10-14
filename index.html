@@ -3,44 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnuAlgo | Replit-to-VPS Migration Kit</title>
+    <title>Anu Algo — Replit-to-VPS Migration Kit</title>
     <style>
-        :root { --bg-color: #0f172a; --card-bg: #1e293b; --accent: #38bdf8; --text-main: #f8fafc; --text-muted: #94a3b8; --border: #334155; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; padding: 0; line-height: 1.6; }
-        header { border-bottom: 1px solid var(--border); padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: bold; font-size: 1.25rem; color: var(--accent); text-decoration: none; }
-        .container { max-width: 800px; margin: 4rem auto; padding: 0 1.5rem; }
-        h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        p.subtitle { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem; }
-        .card { background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
-        .price { font-size: 2rem; font-weight: bold; color: var(--accent); margin-bottom: 1.5rem; }
-        ul { list-style: none; padding: 0; margin-bottom: 2rem; }
-        ul li { padding: 0.5rem 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; }
-        ul li::before { content: "✓"; color: var(--accent); font-weight: bold; margin-right: 0.75rem; }
-        .btn { display: block; width: 100%; background-color: var(--accent); color: #0f172a; text-align: center; padding: 0.875rem 1.5rem; border-radius: 8px; font-weight: bold; text-decoration: none; font-size: 1.1rem; }
-        footer { margin-top: 6rem; text-align: center; font-size: 0.875rem; color: var(--text-muted); padding: 2rem 0; border-top: 1px solid var(--border); }
-        footer a { color: var(--text-muted); text-decoration: underline; margin: 0 0.5rem; }
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --accent: #38bdf8;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        p.subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+        }
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin: 1.5rem 0;
+        }
+        ul {
+            text-align: left;
+            list-style-type: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+        ul li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        ul li::before {
+            content: "✓";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #0f172a;
+            padding: 0.85rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: opacity 0.2s;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
-    <header><a href="index.html" class="logo">AnuAlgo</a></header>
     <div class="container">
-        <h1>Replit-to-VPS Migration Kit</h1>
-        <p class="subtitle">Safely transition your project off Replit onto a dedicated server with automated systemd configs and zero downtime.</p>
+        <header>
+            <h1>Move Your Replit App to Your Own Server</h1>
+            <p class="subtitle">One script. Automatic HTTPS, auto-restart on crash, a built-in firewall, and real-time health checks.</p>
+        </header>
+
         <div class="card">
-            <div class="price">$29 USD</div>
+            <h2>The Replit-to-VPS Migration Kit</h2>
+            <div class="price">$19</div>
+            <p>Stop dealing with restrictive limits and unpredictable environment changes. Own your stack completely.</p>
+            
             <ul>
-                <li>Automated deployment script package</li>
-                <li>Systemd service generator templates</li>
-                <li>Nginx & SSL automated setup walkthrough</li>
-                <li>Uptime monitoring & crash recovery configuration</li>
+                <li><strong>deploy.sh & healthcheck.sh</strong> ready for fresh Ubuntu or Debian servers.</li>
+                <li><strong>Caddy configuration</strong> for zero-hassle automatic SSL certificates.</li>
+                <li><strong>Systemd service setup</strong> so your app instantly recovers from reboots or crashes.</li>
+                <li><strong>Step-by-step checklist</strong> and troubleshooting for common migration errors.</li>
             </ul>
-            <a href="thanks.html" class="btn">Get the Migration Kit</a>
+
+            <!-- Replace href with your actual Stripe or PayPal payment link -->
+            <a href="https://your-payment-link-here.com" class="btn">Get the Kit Now</a>
         </div>
+
+        <footer>
+            <p>Questions? Reach out directly at <a href="mailto:anu@anualgo.com">anu@anualgo.com</a></p>
+        </footer>
     </div>
-    <footer>
-        <p>&copy; 2026 AnuAlgo. All rights reserved.</p>
-        <p><a href="terms.html">Terms of Service</a> | <a href="privacy.html">Privacy Policy</a></p>
-    </footer>
 </body>
 </html>
