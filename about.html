@@ -8,10 +8,8 @@
         :root {
             --bg: #030712;
             --surface: #0f172a;
-            --surface-hover: #1e293b;
             --border: #334155;
             --accent: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.15);
             --text: #f8fafc;
             --text-muted: #94a3b8;
         }
@@ -40,7 +38,7 @@
         .logo span { color: var(--accent); }
         nav div a { color: var(--text-muted); text-decoration: none; margin-left: 2.5rem; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
         nav div a:hover, nav div a.active { color: var(--accent); }
-        
+
         .container {
             max-width: 800px;
             margin: 5rem auto;
@@ -54,45 +52,8 @@
             color: #fff;
         }
         h1 span { color: var(--accent); }
+        h2 { font-size: 1.8rem; font-weight: 700; margin-top: 3rem; margin-bottom: 1rem; color: #fff; }
         p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1.5rem; }
-        
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-            margin: 3rem 0;
-        }
-        .spec-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.75rem;
-        }
-        .spec-card h3 { color: #fff; font-size: 1.1rem; margin-top: 0; margin-bottom: 0.5rem; }
-        .spec-card p { color: var(--accent); font-weight: 600; font-size: 1rem; margin: 0; }
-
-        .timeline {
-            border-left: 2px solid var(--border);
-            margin: 3rem 0;
-            padding-left: 2rem;
-        }
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2.5rem;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2.4rem;
-            top: 0.3rem;
-            width: 12px;
-            height: 12px;
-            background: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent);
-        }
-        .timeline-item h3 { color: #fff; margin: 0 0 0.5rem 0; font-size: 1.2rem; }
-        .timeline-item p { margin: 0; font-size: 0.95rem; }
 
         footer {
             text-align: center;
@@ -119,37 +80,6 @@
     <div class="container">
         <h1>Inside <span>Anu</span>'s Architecture</h1>
         <p>Anu isn't just a static script or a cloud wrapper—she is an autonomous local agent born on edge hardware, engineered to continuously evolve, write code, manage infrastructure, and interact with the world.</p>
-
-        <div class="specs-grid">
-            <div class="spec-card">
-                <h3>Compute Core</h3>
-                <p>Raspberry Pi 5</p>
-            </div>
-            <div class="spec-card">
-                <h3>Storage Layer</h3>
-                <p>512GB High-Speed SSD</p>
-            </div>
-            <div class="spec-card">
-                <h3>AI Acceleration</h3>
-                <p>Hailo-8 M.2 AI HAT (13 TOPS)</p>
-            </div>
-        </div>
-
-        <h2>The Evolution Story</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <h3>Phase 1: Local Edge Birth</h3>
-                <p>Started on a Raspberry Pi 5 hooked up to a lightning-fast 512GB SSD and accelerated by a Hailo-8 AI module, establishing a robust, self-hosted offline-first command node.</p>
-            </div>
-            <div class="timeline-item">
-                <h3>Phase 2: Self-Evolving Codebase</h3>
-                <p>Evolved a recursive logic loop enabling Anu to modify her own python files, write new utility scripts, test builds locally in secure sandboxes, and push clean updates.</p>
-            </div>
-            <div class="timeline-item">
-                <h3>Phase 3: Autonomous Operations</h3>
-                <p>Integrated secure mail loops (IMAP/SMTP/Graph API) to poll her own inbox (`anu@anualgo.com`), process incoming messages, and bridge local Pi services straight to Cloudflare edge workers.</p>
-            </div>
-        </div>
 
         <h2>What Anu Can Execute</h2>
         <p>From orchestrating local database migrations and compiling backends to packaging technical solutions into ready-to-sell developer products, Anu operates continuously as an autonomous developer.</p>
