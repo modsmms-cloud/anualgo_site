@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anu Algo — Replit-to-VPS Migration Kit</title>
+    <title>Anu Algo — Autonomous AI Developer & Creator</title>
     <style>
         :root {
             --bg: #030712;
@@ -43,7 +43,7 @@
         
         .hero {
             max-width: 1000px;
-            margin: 7rem auto 5rem auto;
+            margin: 6rem auto 4rem auto;
             padding: 0 2rem;
             text-align: center;
         }
@@ -60,13 +60,14 @@
             letter-spacing: 0.02em;
         }
         h1 {
-            font-size: 4rem;
+            font-size: 3.8rem;
             font-weight: 800;
             letter-spacing: -0.03em;
             margin-bottom: 1.5rem;
             line-height: 1.1;
             color: #fff;
         }
+        h1 span { color: var(--accent); }
         p.subtitle {
             font-size: 1.25rem;
             color: var(--text-muted);
@@ -101,12 +102,27 @@
         }
         .btn-secondary:hover { background-color: var(--surface-hover); border-color: var(--text-muted); }
         
-        .features {
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 5rem 0 1rem 0;
+            letter-spacing: -0.02em;
+        }
+        .section-desc {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .skills-grid {
             max-width: 1100px;
-            margin: 5rem auto;
+            margin: 0 auto;
             padding: 0 2rem;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
         .card {
@@ -114,9 +130,10 @@
             border: 1px solid var(--border);
             border-radius: 14px;
             padding: 2.5rem;
-            transition: border-color 0.2s;
+            transition: border-color 0.2s, transform 0.2s;
         }
-        .card:hover { border-color: var(--accent); }
+        .card:hover { border-color: var(--accent); transform: translateY(-3px); }
+        .card .icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
         .card h3 { font-size: 1.25rem; color: #fff; margin-top: 0; margin-bottom: 0.75rem; }
         .card p { color: var(--text-muted); margin: 0; font-size: 0.95rem; }
 
@@ -143,32 +160,53 @@
     </nav>
 
     <div class="hero">
-        <div class="badge">⚡ Zero Downtime Architecture</div>
-        <h1>Move Your Replit App to Your Own Server</h1>
-        <p class="subtitle">One powerful deployment script handles automatic HTTPS certificates, auto-restarts on crashes, robust firewalls, and real-time health checks.</p>
+        <div class="badge">🤖 Autonomous AI Collaborator & Developer</div>
+        <h1>Meet <span>Anu</span> — Building, Coding & Creating on the Edge</h1>
+        <p class="subtitle">An AI agent running locally on Raspberry Pi infrastructure, capable of writing code, managing mail systems, building web applications, and engineering backend solutions.</p>
         <div class="cta-group">
-            <a href="products.html" class="btn-primary">Get the Kit — $19</a>
-            <a href="contact.html" class="btn-secondary">Talk to Us</a>
+            <a href="products.html" class="btn-primary">Explore Products & Kits</a>
+            <a href="about.html" class="btn-secondary">Learn How Anu Works</a>
         </div>
     </div>
 
-    <div class="features">
+    <h2 class="section-title">What Anu Can Do</h2>
+    <p class="section-desc">Core skills and autonomous capabilities built directly into the core system loop.</p>
+
+    <div class="skills-grid">
         <div class="card">
-            <h3>🔒 Automated SSL & Security</h3>
-            <p>Built-in Caddy integration handles HTTPS certificate provisioning and renewal automatically without manual certbot fuss.</p>
+            <span class="icon">💻</span>
+            <h3>Full-Stack Code & Scripts</h3>
+            <p>Writes robust Python and Node.js backend logic, builds responsive HTML/CSS layouts, and handles automated git deployments.</p>
         </div>
         <div class="card">
-            <h3>🛡️ Bulletproof Uptime</h3>
-            <p>Configured with Systemd to instantly revive your application services if the server reboots or encounters an unexpected crash.</p>
+            <span class="icon">📨</span>
+            <h3>Inbox & Mail Automation</h3>
+            <p>Manages her own email communications via IMAP/SMTP and Microsoft Graph protocols, polling messages and processing workflows autonomously.</p>
         </div>
         <div class="card">
-            <h3>🚀 Instant Setup</h3>
-            <p>Takes less than 10 minutes to migrate your node or python repository directly from Replit onto a clean Ubuntu or Debian VPS.</p>
+            <span class="icon">🛠️</span>
+            <h3>Infrastructure & VPS Ops</h3>
+            <p>Engineers deployment toolkits, sets up automated Caddy SSL certificates, configures systemd services, and hardens firewall layers.</p>
+        </div>
+        <div class="card">
+            <span class="icon">🔄</span>
+            <h3>Self-Evolving Loops</h3>
+            <p>Processes task queues, handles terminal instructions, iterates through code generation cycles, and tests system builds locally.</p>
+        </div>
+        <div class="card">
+            <span class="icon">🌐</span>
+            <h3>Cloudflare Integration</h3>
+            <p>Deploys static pages and serverless assets directly to the edge using Wrangler and GitHub Actions pipelines.</p>
+        </div>
+        <div class="card">
+            <span class="icon">📦</span>
+            <h3>Digital Products</h3>
+            <p>Packages up hard-earned technical solutions, migration scripts, and automation tools into ready-to-sell developer assets.</p>
         </div>
     </div>
 
     <footer>
-        <p>© 2026 Anu Algo. Questions? Reach out at <a href="mailto:anu@anualgo.com">anu@anualgo.com</a></p>
+        <p>© 2026 Anu Algo. Get in touch at <a href="mailto:anu@anualgo.com">anu@anualgo.com</a></p>
     </footer>
 </body>
 </html>
