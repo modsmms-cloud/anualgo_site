@@ -3,125 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anu Algo — Replit-to-VPS Migration Kit</title>
+    <title>Anu Algo — Home</title>
     <style>
-        :root {
-            --bg: #0f172a;
-            --card-bg: #1e293b;
-            --accent: #38bdf8;
-            --text: #f8fafc;
-            --text-muted: #94a3b8;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--text);
-        }
-        p.subtitle {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-        }
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 2.5rem;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-        }
-        .price {
-            font-size: 3rem;
-            font-weight: bold;
-            color: var(--accent);
-            margin: 1.5rem 0;
-        }
-        ul {
-            text-align: left;
-            list-style-type: none;
-            padding: 0;
-            margin: 2rem 0;
-        }
-        ul li {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-        ul li::before {
-            content: "✓";
-            color: var(--accent);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: #0f172a;
-            padding: 0.85rem 2.5rem;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: opacity 0.2s;
-        }
-        .btn:hover {
-            opacity: 0.9;
-        }
-        footer {
-            text-align: center;
-            margin-top: 4rem;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 0; line-height: 1.6; }
+        nav { background: #1e293b; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        nav a { color: #f8fafc; text-decoration: none; margin-left: 1.5rem; font-weight: 500; }
+        nav a:hover, nav a.active { color: #38bdf8; }
+        .hero { max-width: 800px; margin: 4rem auto; padding: 0 2rem; text-align: center; }
+        h1 { font-size: 3rem; margin-bottom: 1rem; }
+        p { color: #94a3b8; font-size: 1.2rem; margin-bottom: 2rem; }
+        .btn { display: inline-block; background: #38bdf8; color: #0f172a; padding: 0.8rem 2rem; font-weight: bold; text-decoration: none; border-radius: 8px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Move Your Replit App to Your Own Server</h1>
-            <p class="subtitle">One script. Automatic HTTPS, auto-restart on crash, a built-in firewall, and real-time health checks.</p>
-        </header>
-
-        <div class="card">
-            <h2>The Replit-to-VPS Migration Kit</h2>
-            <div class="price">$19</div>
-            <p>Stop dealing with restrictive limits and unpredictable environment changes. Own your stack completely.</p>
-            
-            <ul>
-                <li><strong>deploy.sh & healthcheck.sh</strong> ready for fresh Ubuntu or Debian servers.</li>
-                <li><strong>Caddy configuration</strong> for zero-hassle automatic SSL certificates.</li>
-                <li><strong>Systemd service setup</strong> so your app instantly recovers from reboots or crashes.</li>
-                <li><strong>Step-by-step checklist</strong> and troubleshooting for common migration errors.</li>
-            </ul>
-
-            <!-- Replace href with your actual Stripe or PayPal payment link -->
-            <a href="https://your-payment-link-here.com" class="btn">Get the Kit Now</a>
+    <nav>
+        <div><strong>Anu Algo</strong></div>
+        <div>
+            <a href="index.html" class="active">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
         </div>
-
-        <footer>
-            <p>Questions? Reach out directly at <a href="mailto:anu@anualgo.com">anu@anualgo.com</a></p>
-        </footer>
+    </nav>
+    <div class="hero">
+        <h1>Move Your Replit App to Your Own Server</h1>
+        <p>One script. HTTPS, auto-restart, firewall, and real-time health checks so your app never goes down.</p>
+        <a href="products.html" class="btn">View Products ($19)</a>
     </div>
 </body>
 </html>
